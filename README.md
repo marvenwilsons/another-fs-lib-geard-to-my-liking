@@ -1,5 +1,5 @@
 # Install
-Download zip > https://github.com/bananas-and-trees/Mailspring-Adapta-Theme.git
+Download zip > https://github.com/marvenwilsons/another-fs-lib-geard-to-my-liking.git
 
 # File Types
 

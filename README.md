@@ -6,6 +6,20 @@ JSON - A text file, written with JavaScript object notation.
 CBOR - A binary file, containing the Concise Binary Object Representation (CBOR) data format.
 Binary - A binary file, written in raw bytes.
 
+# Configurations
+```js
+    /* ALl functions return's a promise if set to true, and returns
+     * an object if set false
+     */
+    lib.usePromise = true
+
+    /*
+     * Sets the working directory so that you dont have to repeat
+     * typing the directory each you invoke a function
+     */ 
+    lib.setRootDir = 'rootFolder/'
+```
+
 # File Related Methods
         
 ## fileRead(path,filetype)

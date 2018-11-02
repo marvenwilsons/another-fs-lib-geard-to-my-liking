@@ -3,11 +3,11 @@ Download zip > https://github.com/marvenwilsons/another-fs-lib-geard-to-my-likin
 
 # File Types
 
-### ASCII - A text file in which each byte represents one character according to the ASCII code.
-### UTF-8 - A text file where character encoding is capable of encoding all possible Unicode code points.
-### JSON - A text file, written with JavaScript object notation.
-### CBOR - A binary file, containing the Concise Binary Object Representation (CBOR) data format.
-### Binary - A binary file, written in raw bytes.
+ASCII   - A text file in which each byte represents one character according to the ASCII code.
+UTF-8   - A text file where character encoding is capable of encoding all possible Unicode code points.
+JSON    - A text file, written with JavaScript object notation.
+CBOR    - A binary file, containing the Concise Binary Object Representation (CBOR) data format.
+Binary  - A binary file, written in raw bytes.
 
 # Configurations
 ```js

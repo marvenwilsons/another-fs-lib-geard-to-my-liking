@@ -27,6 +27,9 @@ Binary - A binary file, written in raw bytes.
 Accepts two argument parameters, <path:string> <type:string>, it returns a contents of the choosen file.
 <path:string> the directroy address of the file
 <type:string> File types, use the print.filetypes() to know more about file types
+```js
+    lib.fileRead('foo','utf-8')
+```
 
 ## fileProp(path)
 

@@ -1,3 +1,6 @@
+# Install
+Download zip > https://github.com/bananas-and-trees/Mailspring-Adapta-Theme.git
+
 # File Types
 
 ASCII - A text file in which each byte represents one character according to the ASCII code.

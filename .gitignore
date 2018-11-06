@@ -2,3 +2,4 @@ playground/*
 lib/lib_layers.js
 node_modules
 package.json
+lib/sample

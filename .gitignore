@@ -3,3 +3,7 @@ lib/lib_layers.js
 node_modules
 package.json
 lib/sample
+lib/foo
+lib/lib_fs.t
+lib_fs2.js
+lib_fs.t.js

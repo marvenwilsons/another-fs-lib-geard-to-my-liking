@@ -1,0 +1,92 @@
+43e2f772c75d268222b302d3dcb46053
+const d = require('./lib_dqfs');
+
+//change directory cd()
+test('set root directory', () => {
+    // checks1
+    expect(d.cd('lib/foo')).toBe(true);
+    // Checks2        
+    try {
+        d.cd('foi');
+    } catch (e) {
+        expect(e.message).toBe("cd: no such directory foi/");
+    }
+});
+test('check parameter if correct type of string', () => {
+    try {
+        d.cd(2);
+    } catch (e) {
+        expect(e.message).toBe("on cd() function argument position (1) cannot be undefined should be a string");
+    }
+});
+test('should throw empty path error when param is undefined or empty', () => {
+    try {
+        d.cd('');
+    } catch (e) {
+        expect(e.message).toBe('cd function cannot take an empty string as an argument');
+    }
+});
+// list ls()
+test('should throw an error: args empty object passed', () => {
+    try {
+        d.ls({});
+    } catch (e) {
+        expect(e.message).toBe('listError: Options object cannot be empty');
+    }
+});
+test('should throw an error 1: incorrect key passed', () => {
+    try {
+        d.ls({ endWith: '' });
+    } catch (e) {
+        expect(e.message).toBe('listError: "endWith" is not recognized, options are "endsWith,startsWith,wildCard"');
+    }
+});
+test('should throw an error 2: empty string passed as a value to options object', () => {
+    try {
+        d.ls({ endsWith: '' });
+    } catch (e) {
+        expect(e.message).toBe('listError: Options value cannot be an empty string');
+    }
+});
+test('should throw an error 3: not a type of string passed', () => {
+    try {
+        d.ls({ endsWith: undefined });
+    } catch (e) {
+        expect(e.message).toBe('listError: Options value type should be a string');
+    }
+});
+test('happy path case1: arg is 1 and object', () => {
+    try {
+        d.ls({ endsWith: 'foo' });
+    } catch (e) {
+        console.log(e);
+    }
+});
+
+// directory methods
+// create
+// d.mkdir() --> creates folder
+// d.mkdtemp() --> make a temporart directory
+
+// removing
+// d.rmdir() --> deletes folder and its contents
+// d.rm(path,'')
+// d.emptyDir()
+
+// listing
+// d.ls() --> list all items in a folder
+// d.ls(path,{endsWith:'.js'}) --> list all files that ends with the string specified in folder, returns how many match found
+// d.ls(undefiend,{startsWith: '_'})
+// d.ls(undefiend,'.js') --> list all files that has a .js wherever in the name 
+// d.lsDir() --> list all directories inside that folder
+
+// rename
+// d.rename(path,path)
+
+// find
+// d.find()
+
+//copy
+// d.copy(from,to)
+// d.flushContent(fromFile,toFile)
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxpYl9mcy0yYS50ZXN0LmpzIl0sIm5hbWVzIjpbImQiLCJyZXF1aXJlIiwidGVzdCIsImV4cGVjdCIsImNkIiwidG9CZSIsImUiLCJtZXNzYWdlIiwibHMiLCJlbmRXaXRoIiwiZW5kc1dpdGgiLCJ1bmRlZmluZWQiLCJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiQUFBQSxNQUFNQSxJQUFJQyxRQUFRLFlBQVIsQ0FBVjs7QUFFQTtBQUNJQyxLQUFLLG9CQUFMLEVBQTJCLE1BQU07QUFDN0I7QUFDQUMsV0FBUUgsRUFBRUksRUFBRixDQUFLLFNBQUwsQ0FBUixFQUEwQkMsSUFBMUIsQ0FBK0IsSUFBL0I7QUFDQTtBQUNBLFFBQUc7QUFDQ0wsVUFBRUksRUFBRixDQUFLLEtBQUw7QUFDSCxLQUZELENBRUMsT0FBTUUsQ0FBTixFQUFRO0FBQ0xILGVBQVFHLEVBQUVDLE9BQVYsRUFBb0JGLElBQXBCLENBQTBCLDRCQUExQjtBQUNIO0FBQ0osQ0FURDtBQVVBSCxLQUFLLDJDQUFMLEVBQWtELE1BQU07QUFDcEQsUUFBRztBQUNDRixVQUFFSSxFQUFGLENBQUssQ0FBTDtBQUNILEtBRkQsQ0FFQyxPQUFPRSxDQUFQLEVBQVM7QUFDTkgsZUFBT0csRUFBRUMsT0FBVCxFQUFrQkYsSUFBbEIsQ0FBdUIsK0VBQXZCO0FBQ0g7QUFDSixDQU5EO0FBT0FILEtBQUssZ0VBQUwsRUFBdUUsTUFBTTtBQUN6RSxRQUFHO0FBQ0NGLFVBQUVJLEVBQUYsQ0FBSyxFQUFMO0FBQ0gsS0FGRCxDQUVDLE9BQU1FLENBQU4sRUFBUTtBQUNMSCxlQUFPRyxFQUFFQyxPQUFULEVBQWtCRixJQUFsQixDQUF1Qix3REFBdkI7QUFDSDtBQUNKLENBTkQ7QUFPSjtBQUNJSCxLQUFLLGlEQUFMLEVBQXVELE1BQU07QUFDekQsUUFBRztBQUNDRixVQUFFUSxFQUFGLENBQUssRUFBTDtBQUNILEtBRkQsQ0FFQyxPQUFNRixDQUFOLEVBQVE7QUFDTEgsZUFBT0csRUFBRUMsT0FBVCxFQUFrQkYsSUFBbEIsQ0FBdUIsMkNBQXZCO0FBQ0g7QUFDSixDQU5EO0FBT0FILEtBQUssK0NBQUwsRUFBcUQsTUFBTTtBQUN2RCxRQUFHO0FBQ0NGLFVBQUVRLEVBQUYsQ0FBSyxFQUFDQyxTQUFTLEVBQVYsRUFBTDtBQUNILEtBRkQsQ0FFQyxPQUFNSCxDQUFOLEVBQVE7QUFDTEgsZUFBT0csRUFBRUMsT0FBVCxFQUFrQkYsSUFBbEIsQ0FBdUIsb0ZBQXZCO0FBQ0g7QUFDSixDQU5EO0FBT0FILEtBQUssMkVBQUwsRUFBaUYsTUFBTTtBQUNuRixRQUFHO0FBQ0NGLFVBQUVRLEVBQUYsQ0FBSyxFQUFDRSxVQUFVLEVBQVgsRUFBTDtBQUNILEtBRkQsQ0FFQyxPQUFNSixDQUFOLEVBQVE7QUFDTEgsZUFBT0csRUFBRUMsT0FBVCxFQUFrQkYsSUFBbEIsQ0FBdUIsb0RBQXZCO0FBQ0g7QUFDSixDQU5EO0FBT0FILEtBQUssc0RBQUwsRUFBNEQsTUFBTTtBQUM5RCxRQUFHO0FBQ0NGLFVBQUVRLEVBQUYsQ0FBSyxFQUFDRSxVQUFVQyxTQUFYLEVBQUw7QUFDSCxLQUZELENBRUMsT0FBTUwsQ0FBTixFQUFRO0FBQ0xILGVBQU9HLEVBQUVDLE9BQVQsRUFBa0JGLElBQWxCLENBQXVCLGtEQUF2QjtBQUNIO0FBQ0osQ0FORDtBQU9BSCxLQUFLLHVDQUFMLEVBQTZDLE1BQU07QUFDL0MsUUFBRztBQUNDRixVQUFFUSxFQUFGLENBQUssRUFBQ0UsVUFBVSxLQUFYLEVBQUw7QUFDSCxLQUZELENBRUMsT0FBTUosQ0FBTixFQUFRO0FBQ0xNLGdCQUFRQyxHQUFSLENBQVlQLENBQVo7QUFDSDtBQUNKLENBTkQ7O0FBVUo7QUFDSTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7O0FBRUE7QUFDQTs7QUFFQTtBQUNBO0FBQ0EiLCJmaWxlIjoibGliX2ZzLTJhLnRlc3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBkID0gcmVxdWlyZSgnLi9saWJfZHFmcycpXG5cbi8vY2hhbmdlIGRpcmVjdG9yeSBjZCgpXG4gICAgdGVzdCgnc2V0IHJvb3QgZGlyZWN0b3J5JywgKCkgPT4ge1xuICAgICAgICAvLyBjaGVja3MxXG4gICAgICAgIGV4cGVjdCggZC5jZCgnbGliL2ZvbycpICkudG9CZSh0cnVlKVxuICAgICAgICAvLyBDaGVja3MyICAgICAgICBcbiAgICAgICAgdHJ5e1xuICAgICAgICAgICAgZC5jZCgnZm9pJylcbiAgICAgICAgfWNhdGNoKGUpe1xuICAgICAgICAgICAgZXhwZWN0KCBlLm1lc3NhZ2UgKS50b0JlKCBcImNkOiBubyBzdWNoIGRpcmVjdG9yeSBmb2kvXCIgKVxuICAgICAgICB9XG4gICAgfSlcbiAgICB0ZXN0KCdjaGVjayBwYXJhbWV0ZXIgaWYgY29ycmVjdCB0eXBlIG9mIHN0cmluZycsICgpID0+IHtcbiAgICAgICAgdHJ5e1xuICAgICAgICAgICAgZC5jZCgyKVxuICAgICAgICB9Y2F0Y2ggKGUpe1xuICAgICAgICAgICAgZXhwZWN0KGUubWVzc2FnZSkudG9CZShcIm9uIGNkKCkgZnVuY3Rpb24gYXJndW1lbnQgcG9zaXRpb24gKDEpIGNhbm5vdCBiZSB1bmRlZmluZWQgc2hvdWxkIGJlIGEgc3RyaW5nXCIpXG4gICAgICAgIH1cbiAgICB9KVxuICAgIHRlc3QoJ3Nob3VsZCB0aHJvdyBlbXB0eSBwYXRoIGVycm9yIHdoZW4gcGFyYW0gaXMgdW5kZWZpbmVkIG9yIGVtcHR5JywgKCkgPT4ge1xuICAgICAgICB0cnl7XG4gICAgICAgICAgICBkLmNkKCcnKVxuICAgICAgICB9Y2F0Y2goZSl7XG4gICAgICAgICAgICBleHBlY3QoZS5tZXNzYWdlKS50b0JlKCdjZCBmdW5jdGlvbiBjYW5ub3QgdGFrZSBhbiBlbXB0eSBzdHJpbmcgYXMgYW4gYXJndW1lbnQnKVxuICAgICAgICB9XG4gICAgfSlcbi8vIGxpc3QgbHMoKVxuICAgIHRlc3QoJ3Nob3VsZCB0aHJvdyBhbiBlcnJvcjogYXJncyBlbXB0eSBvYmplY3QgcGFzc2VkJywoKSA9PiB7XG4gICAgICAgIHRyeXtcbiAgICAgICAgICAgIGQubHMoe30pXG4gICAgICAgIH1jYXRjaChlKXtcbiAgICAgICAgICAgIGV4cGVjdChlLm1lc3NhZ2UpLnRvQmUoJ2xpc3RFcnJvcjogT3B0aW9ucyBvYmplY3QgY2Fubm90IGJlIGVtcHR5JylcbiAgICAgICAgfVxuICAgIH0pXG4gICAgdGVzdCgnc2hvdWxkIHRocm93IGFuIGVycm9yIDE6IGluY29ycmVjdCBrZXkgcGFzc2VkJywoKSA9PiB7XG4gICAgICAgIHRyeXtcbiAgICAgICAgICAgIGQubHMoe2VuZFdpdGg6ICcnfSlcbiAgICAgICAgfWNhdGNoKGUpe1xuICAgICAgICAgICAgZXhwZWN0KGUubWVzc2FnZSkudG9CZSgnbGlzdEVycm9yOiBcImVuZFdpdGhcIiBpcyBub3QgcmVjb2duaXplZCwgb3B0aW9ucyBhcmUgXCJlbmRzV2l0aCxzdGFydHNXaXRoLHdpbGRDYXJkXCInKVxuICAgICAgICB9XG4gICAgfSlcbiAgICB0ZXN0KCdzaG91bGQgdGhyb3cgYW4gZXJyb3IgMjogZW1wdHkgc3RyaW5nIHBhc3NlZCBhcyBhIHZhbHVlIHRvIG9wdGlvbnMgb2JqZWN0JywoKSA9PiB7XG4gICAgICAgIHRyeXtcbiAgICAgICAgICAgIGQubHMoe2VuZHNXaXRoOiAnJ30pXG4gICAgICAgIH1jYXRjaChlKXtcbiAgICAgICAgICAgIGV4cGVjdChlLm1lc3NhZ2UpLnRvQmUoJ2xpc3RFcnJvcjogT3B0aW9ucyB2YWx1ZSBjYW5ub3QgYmUgYW4gZW1wdHkgc3RyaW5nJylcbiAgICAgICAgfVxuICAgIH0pXG4gICAgdGVzdCgnc2hvdWxkIHRocm93IGFuIGVycm9yIDM6IG5vdCBhIHR5cGUgb2Ygc3RyaW5nIHBhc3NlZCcsKCkgPT4ge1xuICAgICAgICB0cnl7XG4gICAgICAgICAgICBkLmxzKHtlbmRzV2l0aDogdW5kZWZpbmVkfSlcbiAgICAgICAgfWNhdGNoKGUpe1xuICAgICAgICAgICAgZXhwZWN0KGUubWVzc2FnZSkudG9CZSgnbGlzdEVycm9yOiBPcHRpb25zIHZhbHVlIHR5cGUgc2hvdWxkIGJlIGEgc3RyaW5nJylcbiAgICAgICAgfVxuICAgIH0pXG4gICAgdGVzdCgnaGFwcHkgcGF0aCBjYXNlMTogYXJnIGlzIDEgYW5kIG9iamVjdCcsKCkgPT4ge1xuICAgICAgICB0cnl7XG4gICAgICAgICAgICBkLmxzKHtlbmRzV2l0aDogJ2Zvbyd9KVxuICAgICAgICB9Y2F0Y2goZSl7XG4gICAgICAgICAgICBjb25zb2xlLmxvZyhlKVxuICAgICAgICB9XG4gICAgfSlcblxuXG5cbi8vIGRpcmVjdG9yeSBtZXRob2RzXG4gICAgLy8gY3JlYXRlXG4gICAgLy8gZC5ta2RpcigpIC0tPiBjcmVhdGVzIGZvbGRlclxuICAgIC8vIGQubWtkdGVtcCgpIC0tPiBtYWtlIGEgdGVtcG9yYXJ0IGRpcmVjdG9yeVxuXG4gICAgLy8gcmVtb3ZpbmdcbiAgICAvLyBkLnJtZGlyKCkgLS0+IGRlbGV0ZXMgZm9sZGVyIGFuZCBpdHMgY29udGVudHNcbiAgICAvLyBkLnJtKHBhdGgsJycpXG4gICAgLy8gZC5lbXB0eURpcigpXG5cbiAgICAvLyBsaXN0aW5nXG4gICAgLy8gZC5scygpIC0tPiBsaXN0IGFsbCBpdGVtcyBpbiBhIGZvbGRlclxuICAgIC8vIGQubHMocGF0aCx7ZW5kc1dpdGg6Jy5qcyd9KSAtLT4gbGlzdCBhbGwgZmlsZXMgdGhhdCBlbmRzIHdpdGggdGhlIHN0cmluZyBzcGVjaWZpZWQgaW4gZm9sZGVyLCByZXR1cm5zIGhvdyBtYW55IG1hdGNoIGZvdW5kXG4gICAgLy8gZC5scyh1bmRlZmllbmQse3N0YXJ0c1dpdGg6ICdfJ30pXG4gICAgLy8gZC5scyh1bmRlZmllbmQsJy5qcycpIC0tPiBsaXN0IGFsbCBmaWxlcyB0aGF0IGhhcyBhIC5qcyB3aGVyZXZlciBpbiB0aGUgbmFtZSBcbiAgICAvLyBkLmxzRGlyKCkgLS0+IGxpc3QgYWxsIGRpcmVjdG9yaWVzIGluc2lkZSB0aGF0IGZvbGRlclxuXG4gICAgLy8gcmVuYW1lXG4gICAgLy8gZC5yZW5hbWUocGF0aCxwYXRoKVxuXG4gICAgLy8gZmluZFxuICAgIC8vIGQuZmluZCgpXG5cbiAgICAvL2NvcHlcbiAgICAvLyBkLmNvcHkoZnJvbSx0bylcbiAgICAvLyBkLmZsdXNoQ29udGVudChmcm9tRmlsZSx0b0ZpbGUpXG5cbiJdfQ==

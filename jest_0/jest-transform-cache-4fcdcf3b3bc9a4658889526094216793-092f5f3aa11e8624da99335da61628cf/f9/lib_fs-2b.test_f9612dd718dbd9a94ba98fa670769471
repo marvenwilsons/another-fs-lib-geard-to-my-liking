@@ -1,0 +1,23 @@
+a26004a63246d99af4c9197375b677a7
+
+(() => {
+    const d = require('./lib_dqfs');
+
+    test('happy path case2: arg is 2 with path and options', () => {
+        try {
+            d.ls('foo/bazzzz', { startsWith: 'test' });
+        } catch (e) {
+            expect(e.message).toBe('on ls: no such directory foo/bazzzz/');
+        }
+    });
+
+    test('happy path case4: arg is blank', () => {
+        try {
+            d.cd('playground');
+            d.ls('lib/foo');
+        } catch (e) {
+            expect(e.message).toBe('on ls: no such directory playground/lib/foo/');
+        }
+    });
+})();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxpYl9mcy0yYi50ZXN0LmpzIl0sIm5hbWVzIjpbImQiLCJyZXF1aXJlIiwidGVzdCIsImxzIiwic3RhcnRzV2l0aCIsImUiLCJleHBlY3QiLCJtZXNzYWdlIiwidG9CZSIsImNkIl0sIm1hcHBpbmdzIjoiO0FBQ0EsQ0FBQyxNQUFNO0FBQ0gsVUFBTUEsSUFBSUMsUUFBUSxZQUFSLENBQVY7O0FBRUFDLFNBQUssa0RBQUwsRUFBd0QsTUFBTTtBQUMxRCxZQUFHO0FBQ0NGLGNBQUVHLEVBQUYsQ0FBSyxZQUFMLEVBQWtCLEVBQUNDLFlBQVksTUFBYixFQUFsQjtBQUNILFNBRkQsQ0FFQyxPQUFNQyxDQUFOLEVBQVE7QUFDTEMsbUJBQU9ELEVBQUVFLE9BQVQsRUFBa0JDLElBQWxCLENBQXVCLHNDQUF2QjtBQUNIO0FBQ0osS0FORDs7QUFRQU4sU0FBSyxnQ0FBTCxFQUFzQyxNQUFNO0FBQ3hDLFlBQUc7QUFDRUYsY0FBRVMsRUFBRixDQUFLLFlBQUw7QUFDQVQsY0FBRUcsRUFBRixDQUFLLFNBQUw7QUFDSixTQUhELENBR0MsT0FBTUUsQ0FBTixFQUFRO0FBQ0xDLG1CQUFPRCxFQUFFRSxPQUFULEVBQWtCQyxJQUFsQixDQUF1Qiw4Q0FBdkI7QUFDSDtBQUNKLEtBUEQ7QUFRSCxDQW5CRCIsImZpbGUiOiJsaWJfZnMtMmIudGVzdC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuKCgpID0+IHtcbiAgICBjb25zdCBkID0gcmVxdWlyZSgnLi9saWJfZHFmcycpXG5cbiAgICB0ZXN0KCdoYXBweSBwYXRoIGNhc2UyOiBhcmcgaXMgMiB3aXRoIHBhdGggYW5kIG9wdGlvbnMnLCgpID0+IHtcbiAgICAgICAgdHJ5e1xuICAgICAgICAgICAgZC5scygnZm9vL2Jhenp6eicse3N0YXJ0c1dpdGg6ICd0ZXN0J30pXG4gICAgICAgIH1jYXRjaChlKXtcbiAgICAgICAgICAgIGV4cGVjdChlLm1lc3NhZ2UpLnRvQmUoJ29uIGxzOiBubyBzdWNoIGRpcmVjdG9yeSBmb28vYmF6enp6LycpXG4gICAgICAgIH1cbiAgICB9KVxuICAgIFxuICAgIHRlc3QoJ2hhcHB5IHBhdGggY2FzZTQ6IGFyZyBpcyBibGFuaycsKCkgPT4ge1xuICAgICAgICB0cnl7XG4gICAgICAgICAgICAgZC5jZCgncGxheWdyb3VuZCcpXG4gICAgICAgICAgICAgZC5scygnbGliL2ZvbycpXG4gICAgICAgIH1jYXRjaChlKXtcbiAgICAgICAgICAgIGV4cGVjdChlLm1lc3NhZ2UpLnRvQmUoJ29uIGxzOiBubyBzdWNoIGRpcmVjdG9yeSBwbGF5Z3JvdW5kL2xpYi9mb28vJylcbiAgICAgICAgfVxuICAgIH0pXG59KSgpXG4iXX0=

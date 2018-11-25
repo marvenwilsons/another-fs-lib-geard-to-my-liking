@@ -1,9 +1,9 @@
 # Listing
-    ```js
-        const fs = require('dq-fs')
+```js
+    const fs = require('dq-fs')
 
-        fs.ls('dir/dir')
-    ```
+    fs.ls('dir/dir')
+```
 
 # File Related Methods
         

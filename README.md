@@ -1,27 +1,9 @@
-# Install
-Download zip > https://github.com/marvenwilsons/another-fs-lib-geard-to-my-liking.git
+# Listing
+    ```js
+        const fs = require('dq-fs')
 
-# File Types
-
-ASCII   - A text file in which each byte represents one character according to the ASCII code.
-UTF-8   - A text file where character encoding is capable of encoding all possible Unicode code points.
-JSON    - A text file, written with JavaScript object notation.
-CBOR    - A binary file, containing the Concise Binary Object Representation (CBOR) data format.
-Binary  - A binary file, written in raw bytes.
-
-# Configurations
-```js
-    /* ALl functions return's a promise if set to true, and returns
-     * an object if set false
-     */
-    lib.usePromise = true
-
-    /*
-     * Sets the working directory so that you dont have to repeat
-     * typing the directory each you invoke a function
-     */ 
-    lib.setRootDir = 'rootFolder/'
-```
+        fs.ls('dir/dir')
+    ```
 
 # File Related Methods
         

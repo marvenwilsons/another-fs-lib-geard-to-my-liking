@@ -1,0 +1,23 @@
+{
+    "name": "lib",
+    "version": "1.0.0",
+    "description": "Download zip > https://github.com/marvenwilsons/another-fs-lib-geard-to-my-liking.git",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/marvenwilsons/another-fs-lib-geard-to-my-liking.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/marvenwilsons/another-fs-lib-geard-to-my-liking/issues"
+    },
+    "homepage": "https://github.com/marvenwilsons/another-fs-lib-geard-to-my-liking#readme",
+    "devDependencies": {
+        "jest": "^23.6.0",
+        "nodemon": "^1.18.6"
+    }
+}

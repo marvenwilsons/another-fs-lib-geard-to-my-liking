@@ -1,0 +1,7 @@
+case 1 : mass create files
+touch('file1.txt,file2.txt,')
+
+case 2: create single files
+touch('file')
+
+

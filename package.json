@@ -4,7 +4,8 @@
     "description": "Download zip > https://github.com/marvenwilsons/another-fs-lib-geard-to-my-liking.git",
     "main": "index.js",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "watch" : "jest --watchAll"
     },
     "repository": {
         "type": "git",

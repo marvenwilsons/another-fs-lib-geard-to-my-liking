@@ -9,3 +9,5 @@ const fs = new fileSystem
 // }catch(e){
 //     console.log(e)
 // }
+
+fs.mv('lib/foo/rm', 2345)

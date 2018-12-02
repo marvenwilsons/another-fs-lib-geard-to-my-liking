@@ -1,4 +1,5 @@
 const fileSystem = require('./lib/lib_dqfs.exts')
+const nodefs = require('fs')
 const fs = new fileSystem
 
 // try{
@@ -9,5 +10,3 @@ const fs = new fileSystem
 // }catch(e){
 //     console.log(e)
 // }
-
-fs.mv('lib/foo/rm', 2345)

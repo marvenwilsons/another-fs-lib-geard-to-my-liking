@@ -1,12 +1,18 @@
 # Table of contents
-	
-* [cd](#cd)
-* [cp](#cp)
-* [ls](#ls)
-* [mkdir](#mkdir)
-* [mv](#mv)
-* [rm](#rm)
-* [touch](#touch)
+
+* Methods	
+    * [cd](#cd)
+    * [cp](#cp)
+    * [ls](#ls)
+    * [mkdir](#mkdir)
+    * [mv](#mv)
+    * [rm](#rm)
+    * [touch](#touch)
+* Chaining
+    * [Chaining methods](#chaining)
+* Sorting
+    * [SortyByName]()
+    * [SortByType]()
 
 # cd(path)
 **change directory** : sets directory to path
@@ -26,3 +32,4 @@ A **ValError** is thrown if path is undefined
 # cp(frm,to)
 **copy** : copy a directory or a file
 
+# ls(path,[opts])

@@ -1,5 +1,5 @@
-lib/*
+lib
+
 node_modules
+
 playground
-end.js
-start.js

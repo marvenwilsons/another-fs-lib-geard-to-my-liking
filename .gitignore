@@ -1,2 +1,5 @@
 lib/foo/*
 node_modules
+playground
+end.js
+start.js
